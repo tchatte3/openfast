@@ -714,7 +714,7 @@ SUBROUTINE SD_CalcOutput( t, u, p, x, xd, z, OtherState, y, m, ErrStat, ErrMsg )
       !locals
       
       INTEGER(IntKi)                               :: L1,L2       ! partial Lengths of state and input arrays
-      INTEGER(IntKi)                               :: I,J, J0, ndcnt,TrFa(.False.:.True.)         ! Counters plus trick to transform logical to int as in TrFa(expr)=0/1 for expr=F/T
+      INTEGER(IntKi)                               :: I, J, J0, ndcnt
       REAL(ReKi)                                   :: AllOuts(0:MaxOutPts+p%OutAllInt*p%OutAllDims)
             
       REAL(ReKi)                                   :: rotations(3)
@@ -867,7 +867,7 @@ SUBROUTINE SD_CalcOutput( t, u, p, x, xd, z, OtherState, y, m, ErrStat, ErrMsg )
                 startDOF=  I+ L2 !this DOF is stored at the bottom of the IDL list 
                 ! index into the Y2Mesh, this must be the node index
                 L1 = MOD(p%IDCK(I),6) 
-                J = p%IDCK(I)/6 + L1 / max(L1,1)  !TrFa((L1 .GT. 0))  !NODE INDEX
+                J = p%IDCK(I)/6 + L1 / max(L1,1) !NODE INDEX
                 IF (J .NE. J0) THEN 
                     J0=J
                     ndcnt=ndcnt+1
@@ -3410,9 +3410,6 @@ SUBROUTINE EigenSolve(K, M, NOmega, tDOFs, RetDOFs, Init,p, Phi, Omega, ErrStat,
   DO I=1,N  !This check is necessary as we get machine precision for some situations. It would be good if we couls speed it up
       if (EqualRealNos(Omega2(I), 0.0_ReKi)) Omega2(I) = 0.0_ReKi
   ENDDO
-!      WHERE (EqualRealNos(Omega2, 0.0_ReKi) )
-!       Omega2 = 0.0_ReKi 
-!   END WHERE
 
    Omega=SQRT( Omega2(1:NOmega) ) !Assign my new Omega and below my new Phi (eigenvectors) [eigenvalues are actually the square of omega]
                   
