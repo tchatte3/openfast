@@ -3408,7 +3408,7 @@ SUBROUTINE EigenSolve(K, M, NOmega, tDOFs, RetDOFs, Init,p, Phi, Omega, ErrStat,
 
       ! Note:  NOmega must be <= N, which is the length of Omega2, Phi!
   DO I=1,N  !This check is necessary as we get machine precision for some situations. It would be good if we couls speed it up
-      if (EqualRealNos(Omega2(I), 0.0_ReKi)) Omega2(I) = 0.0_ReKi
+      if (EqualRealNos(Real(Omega2(I), ReKi), 0.0_ReKi)) Omega2(I) = 0.0_ReKi
   ENDDO
 
    Omega=SQRT( Omega2(1:NOmega) ) !Assign my new Omega and below my new Phi (eigenvectors) [eigenvalues are actually the square of omega]
