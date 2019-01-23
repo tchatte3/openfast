@@ -17,11 +17,7 @@
 ! limitations under the License.
 !
 !**********************************************************************************************************************************
-! File last committed: $Date: 2017-06-20 11:40:32 -0600 (Tue, 20 Jun 2017) $
-! (File) Revision #: $Rev: 384 $
-! URL: $HeadURL: https://wind-dev.nrel.gov/svn/SubDyn/branches/v1.03.00a-rrd/Source/SubDyn.f90 $
-!**********************************************************************************************************************************
-!! SubDyn is a time-domain structural-dynamics module for multi-member fixed-bottom substructures.
+!> SubDyn is a time-domain structural-dynamics module for multi-member fixed-bottom substructures.
 !! SubDyn relies on two main engineering schematizations: (1) a linear frame finite-element beam model (LFEB), and 
 !! (2) a dynamics system reduction via Craig-Bampton's (C-B) method, together with a Static-Improvement method, greatly reducing 
 !!  the number of modes needed to obtain an accurate solution.   This version is trying to incorporate the K, M at the pile heads.

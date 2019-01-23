@@ -17,10 +17,6 @@
 ! limitations under the License.
 !
 !**********************************************************************************************************************************
-! File last committed: $Date: 2016-11-16 15:21:47 -0700 (Wed, 16 Nov 2016) $
-! (File) Revision #: $Rev: 380 $
-! URL: $HeadURL: https://wind-dev.nrel.gov/svn/SubDyn/branches/v1.03.00a-rrd/Source/SubDyn_Output.f90 $
-!**********************************************************************************************************************************
 MODULE SubDyn_Output
 
       ! This MODULE stores variables used for output.

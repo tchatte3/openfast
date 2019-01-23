@@ -16,10 +16,6 @@
 ! See the License for the specific language governing permissions and
 ! limitations under the License.
 !**********************************************************************************************************************************
-! File last committed: $Date: 2016-12-02 10:38:24 -0700 (Fri, 02 Dec 2016) $
-! (File) Revision #: $Rev: 383 $
-! URL: $HeadURL: https://wind-dev.nrel.gov/svn/SubDyn/branches/v1.03.00a-rrd/Source/SD_FEM.f90 $
-!**********************************************************************************************************************************
 MODULE SD_FEM
   USE NWTC_Library
   USE SubDyn_Types
