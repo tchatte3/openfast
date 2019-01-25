@@ -520,7 +520,7 @@ between physical DOFs and generalized DOFs can be written as:
 
 .. math::  :label: CB1
 
-        \begin{pmatrix} 
+        \begin{bmatrix} 
         	U_R \\ 
                 U_L 
         \end{bmatrix} =
@@ -712,7 +712,7 @@ related to each other as follows:
 
 	U_R = T_I U_{TP}
 
-where :math:`T_I` is a:math:`{\left(6 NIN \right) \times 6}` matrix, :math:`NIN` is the number of interface nodes, and :math:`{U_{TP}}` is the 6 DOFs
+where :math:`T_I` is a :math:`{\left(6 NIN \right) \times 6}` matrix, :math:`NIN` is the number of interface nodes, and :math:`{U_{TP}}` is the 6 DOFs
 of the rigid transition piece. The matrix :math:`T_I` can be written as follows:
 
 .. math:: :label: TI
@@ -892,7 +892,7 @@ where
 
 	A = \begin{bmatrix}
 		0 & I \\ 
-		-\Omega_m^2 -2 \zeta \Omega_m
+		-\Omega_m^2 & -2 \zeta \Omega_m
             \end{bmatrix}
 
 	B = \begin{bmatrix}
@@ -905,8 +905,7 @@ where
             \end{bmatrix}
 
 
-In SubDyn, the outputs to the ElastoDyn module are the reaction forces
-  at the transition piece :math:`F_{TP}`:
+In SubDyn, the outputs to the ElastoDyn module are the reaction forces at the transition piece :math:`F_{TP}`:
 
 .. math:: :label: y1
 

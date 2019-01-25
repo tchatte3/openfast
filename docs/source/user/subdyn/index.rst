@@ -31,3 +31,4 @@ SubDyn User Guide and Theory Manual
    appendixD.rst
    appendixE.rst
    appendixF.rst
+   UsrPtfm_theory.rst

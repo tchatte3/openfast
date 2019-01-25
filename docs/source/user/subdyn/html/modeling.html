@@ -201,7 +201,7 @@ decrease the accuracy of the model.</p>
 <p>When SubDyn is coupled to FAST, the joints and members need not match
 between HydroDyn and SubDyn—FAST’s mesh-mapping utility handles the
 transfer of motion and loads across meshes in a physically relevant
-manner [sprague2014], but consistency between the joints and
+manner <a class="reference internal" href="zrefs.html#sprague2014" id="id2">[SJJ14]</a>, but consistency between the joints and
 members in HydroDyn and SubDyn is advised.</p>
 <p>For offshore applications, because of the exponential decay of
 hydrodynamic loads with depth, HydroDyn requires higher resolution near
@@ -284,7 +284,7 @@ ElastoDyn should also be set equal to the TP reference-point’s
 coordinates (commonly indicating either the tower-base flange location,
 or TP centroid, or TP center of mass) that the user may have set in the
 stand-alone mode for checking the SubDyn model. A rigid connection
-between the SubDyn interface joints and TP reference point (<span class="math">\({\equiv}\)</span> platform
+between the SubDyn interface joints and TP reference point (<span class="math notranslate nohighlight">\({\equiv}\)</span> platform
 reference point) is assumed.</p>
 <p>For full lattice support structures or other structures with no
 transition piece, the entire support structure up to the yaw bearing may
@@ -345,21 +345,21 @@ damping for the platform-heave DOF. This augmentation can be achieved
 quite easily by calculating the damping from Eq. <a class="reference internal" href="#equation-damping">(1)</a> and specifying this
 as the (3,3) element of HydroDyn’s additional linear damping matrix,
 <strong>AddBLin</strong>. Experience has shown that a damping ratio of 1% of
-critical (<span class="math">\({\zeta=0.01}\)</span>) is sufficient. In Eq. <a class="reference internal" href="#equation-damping">(1)</a>, <span class="math">\({K_{33}^{(SD)}}\)</span> is the equivalent heave stiffness
-of the substructure (the (3,3) element of the <strong>KBBt</strong> (i.e., <span class="math">\({\tilde{K}_{BB}}\)</span>) matrix
-found in the SubDyn summary file, see also Section 6), <span class="math">\({M_{33}^{(SD)}}\)</span> is the equivalent
+critical (<span class="math notranslate nohighlight">\({\zeta=0.01}\)</span>) is sufficient. In Eq. <a class="reference internal" href="#equation-damping">(1)</a>, <span class="math notranslate nohighlight">\({K_{33}^{(SD)}}\)</span> is the equivalent heave stiffness
+of the substructure (the (3,3) element of the <strong>KBBt</strong> (i.e., <span class="math notranslate nohighlight">\({\tilde{K}_{BB}}\)</span>) matrix
+found in the SubDyn summary file, see also Section 6), <span class="math notranslate nohighlight">\({M_{33}^{(SD)}}\)</span> is the equivalent
 heave mass of the substructure (the (3,3) element of the <strong>MBBt</strong>
-(i.e., <span class="math">\({\tilde{M}_{BB}}\)</span>) matrix found in the SubDyn summary file, see also Section 6),
-and <span class="math">\({M^{(ED)}}\)</span> is the total mass of the rotor, nacelle, tower, and TP (found in the
+(i.e., <span class="math notranslate nohighlight">\({\tilde{M}_{BB}}\)</span>) matrix found in the SubDyn summary file, see also Section 6),
+and <span class="math notranslate nohighlight">\({M^{(ED)}}\)</span> is the total mass of the rotor, nacelle, tower, and TP (found in the
 ElastoDyn summary file).</p>
-<div class="math" id="equation-damping">
+<div class="math notranslate nohighlight" id="equation-damping">
 <span class="eqno">(1)<a class="headerlink" href="#equation-damping" title="Permalink to this equation">¶</a></span>\[C_{33}^{(HD)} = 2 \zeta \sqrt{ K_{33}^{(SD)} \left( M_{33}^{(SD)}+M^{(ED)} \right)}\]</div>
 <p>To minimize extraneous excitation of the platform-heave DOF, it is
 useful to set the initial platform-heave displacement to its natural
 static-equilibrium position, which can be approximated by Eq. <a class="reference internal" href="#equation-ptfmheave">(2)</a>, where
 is the magnitude of gravity. <em>PtfmHeave</em> from Eq. <a class="reference internal" href="#equation-ptfmheave">(2)</a> should be
 specified in the initial conditions section of the ElastoDyn input file.</p>
-<div class="math" id="equation-ptfmheave">
+<div class="math notranslate nohighlight" id="equation-ptfmheave">
 <span class="eqno">(2)<a class="headerlink" href="#equation-ptfmheave" title="Permalink to this equation">¶</a></span>\[PtfmHeave = -\dfrac{ \left( M_{33}^{(SD)}+M^{(ED)} \right) g}{K_{33}^{(SD)}}\]</div>
 </div>
 <div class="section" id="self-weight-calculations">
@@ -371,7 +371,7 @@ The array of self-weight forces can be seen in the summary file if the
 code is compiled with DEBUG compiler directives. In general, SubDyn
 assumes that structural motions of the substructure are small, such that
 (1) small-angle assumptions apply to structural rotations and (2) the
-so-called P- <span class="math">\({\Delta}\)</span> effect is negligible, and therefore undeflected node
+so-called P- <span class="math notranslate nohighlight">\({\Delta}\)</span> effect is negligible, and therefore undeflected node
 locations are used for self-weight calculations.</p>
 </div>
 <div class="section" id="note-on-other-load-calculations">
@@ -396,7 +396,7 @@ however, the linearization process has yet to be implemented in FAST v8.
 Until full-system linearization is made available, experience has shown
 that it is sufficient to enable all C-B modes up to 10 Hz (the natural
 frequencies of the C-B modes are written to the SubDyn summary file). If
-SIM (see Section <code class="xref std std-numref docutils literal"><span class="pre">sim</span></code>) is not enabled, in addition to capturing physical
+SIM (see Section <code class="xref std std-numref docutils literal notranslate"><span class="pre">sim</span></code>) is not enabled, in addition to capturing physical
 modes up to a given frequency, the highest C-B mode must include the
 substructure axial modes so that gravity loading from self-weight is
 properly accounted for within SubDyn. This inclusion likely requires
@@ -409,9 +409,9 @@ higher natural frequencies than the physical modes.</p>
 <div class="section" id="integration-time-step-guidelines">
 <h2>Integration Time Step Guidelines<a class="headerlink" href="#integration-time-step-guidelines" title="Permalink to this headline">¶</a></h2>
 <p>Another consideration when creating SubDyn input files is the time step
-size. SubDyn offers three explicit time-integrators &#8212; the fourth-order
+size. SubDyn offers three explicit time-integrators — the fourth-order
 Runge-Kutta (RK4), fourth-order Adams-Bashforth (AB4), fourth-order
-Adams-Bashforth-Moulton (ABM4) methods &#8212; and the implicit second-order
+Adams-Bashforth-Moulton (ABM4) methods — and the implicit second-order
 Adams-Moulton (AM2) method. Users have the option of using the global
 time step from the glue code or an alternative SubDyn-unique time step
 that is an integer multiple smaller than the glue-code time step.
@@ -421,7 +421,7 @@ key frequencies of the system), numerical stability of the selected
 explicit time-integrator, and that the coupling with FAST is numerically
 stable.</p>
 <p>For the RK4 and ABM4 methods, we recommend that the SubDyn time step
-follow the relationship shown in Eq. <a class="reference internal" href="#equation-dtmax">(3)</a>, where <span class="math">\({f_{max}}\)</span> is the higher of (1) the
+follow the relationship shown in Eq. <a class="reference internal" href="#equation-dtmax">(3)</a>, where <span class="math notranslate nohighlight">\({f_{max}}\)</span> is the higher of (1) the
 highest natural frequency of the retained C-B modes and (2) the highest
 natural frequency of the physical modes when coupled to FAST. Although
 the former can be obtained from the SubDyn summary file, the latter is
@@ -430,9 +430,9 @@ FAST model is realized. Until then, experience has shown that the
 highest physical mode when SubDyn is coupled to FAST is often the
 platform-heave mode of ElastoDyn, with a frequency given by Eq. <a class="reference internal" href="#equation-freq">(4)</a>,
 where the variables are defined in Section 5.3.</p>
-<div class="math" id="equation-dtmax">
+<div class="math notranslate nohighlight" id="equation-dtmax">
 <span class="eqno">(3)<a class="headerlink" href="#equation-dtmax" title="Permalink to this equation">¶</a></span>\[dt_{max} = \dfrac{1}{10 f_{max}}\]</div>
-<div class="math" id="equation-freq">
+<div class="math notranslate nohighlight" id="equation-freq">
 <span class="eqno">(4)<a class="headerlink" href="#equation-freq" title="Permalink to this equation">¶</a></span>\[f= \dfrac{1}{2\pi} \sqrt{\dfrac{K_{33}^{(SD)}}{ M_{33}^{(SD)}+M^{(ED)}}}\]</div>
 <p>For the AB4 method, the recommended time step is half the value given by
 Eq. <a class="reference internal" href="#equation-dtmax">(3)</a>.</p>
@@ -462,7 +462,7 @@ accuracy and that the coupling to FAST is numerically stable.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, National Renewable Energy Laboratory.
+        &copy; Copyright 2017, National Renewable Energy Laboratory
 
     </p>
   </div>
@@ -481,21 +481,24 @@ accuracy and that the coupling to FAST is numerically stable.</p>
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
   
 

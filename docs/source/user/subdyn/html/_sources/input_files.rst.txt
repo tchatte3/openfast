@@ -105,6 +105,8 @@ Table 1. TP Reference Point Inputs Time-Series Data File Contents
 | 17-19           | TP reference point rotational accelerations about *X*, *Y*, and *Z*                                   | .. math:: \frac{\text{radians}}{s^{2}}   |
 +-----------------+-------------------------------------------------------------------------------------------------------+------------------------------------------+
 
+.. _main-input-file:
+
 SubDyn Primary Input File
 -------------------------
 The SubDyn input file defines the substructure geometry, integration and

@@ -168,15 +168,15 @@
 <span id="sd-appendix-d"></span><h1>Appendix D. List of Output Channels<a class="headerlink" href="#appendix-d-list-of-output-channels" title="Permalink to this headline">¶</a></h1>
 <p>This is a list of all possible output parameters for the SubDyn module.
 The names are grouped by meaning, but can be ordered in the OUTPUT
-CHANNELS section of the SubDyn input file as the user sees fit. <span class="math">\(M \alpha N \beta\)</span>,
-refers to node <span class="math">\(\beta\)</span> of member <span class="math">\(\alpha\)</span>, where <span class="math">\(\alpha\)</span> is a number in the range [1,9] and
-corresponds to row <span class="math">\(\alpha\)</span> in the MEMBER OUTPUT LIST table (see Section ) and
-<span class="math">\(\beta\)</span> is a number in the range [1,9] and corresponds to node <span class="math">\(\beta\)</span> in the
+CHANNELS section of the SubDyn input file as the user sees fit. <span class="math notranslate nohighlight">\(M \alpha N \beta\)</span>,
+refers to node <span class="math notranslate nohighlight">\(\beta\)</span> of member <span class="math notranslate nohighlight">\(\alpha\)</span>, where <span class="math notranslate nohighlight">\(\alpha\)</span> is a number in the range [1,9] and
+corresponds to row <span class="math notranslate nohighlight">\(\alpha\)</span> in the MEMBER OUTPUT LIST table (see Section ) and
+<span class="math notranslate nohighlight">\(\beta\)</span> is a number in the range [1,9] and corresponds to node <span class="math notranslate nohighlight">\(\beta\)</span> in the
 <strong>NodeCnt</strong> list of that table entry.</p>
 <p>Some outputs are in the SS reference coordinate system (global
 inertial-frame coordinate system), and end with the suffix <cite>ss</cite>; others
 refer to the local (member) reference system and they have suffixes
-&#8220;Xe&#8221;, &#8220;Ye&#8221;, or &#8220;Ze&#8221; (see Section 7).</p>
+“Xe”, “Ye”, or “Ze” (see Section 7).</p>
 <p>Table C-1. List of Output Channels.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -230,8 +230,8 @@ refer to the local (member) reference system and they have suffixes
 <tr class="row-odd"><td><p class="first">IntfTAXss, IntfTAYss, IntfTAZss,</p>
 <p class="last">IntfRAXss, IntfRAYss IntfRAZss</p>
 </td>
-<td><p class="first">(<span class="math">\({m/s^2}\)</span>), (<span class="math">\({m/s^2}\)</span>), (<span class="math">\({m/s^2}\)</span>),</p>
-<p class="last">(<span class="math">\({rad/s^2}\)</span>), (<span class="math">\({rad/s^2}\)</span>), (<span class="math">\({rad/s^2}\)</span>)</p>
+<td><p class="first">(<span class="math notranslate nohighlight">\({m/s^2}\)</span>), (<span class="math notranslate nohighlight">\({m/s^2}\)</span>), (<span class="math notranslate nohighlight">\({m/s^2}\)</span>),</p>
+<p class="last">(<span class="math notranslate nohighlight">\({rad/s^2}\)</span>), (<span class="math notranslate nohighlight">\({rad/s^2}\)</span>), (<span class="math notranslate nohighlight">\({rad/s^2}\)</span>)</p>
 </td>
 <td><p class="first">Translational and rotational accelerations of the TP reference point</p>
 <p class="last">(platform reference point) location in SS coordinate system</p>
@@ -249,60 +249,60 @@ refer to the local (member) reference system and they have suffixes
 <td>First time-derivatives of C-B modal variables (up to first 99)</td>
 </tr>
 <tr class="row-odd"><td>SSqmdd01-SSqmdd99</td>
-<td>(<span class="math">\({1/s^2}\)</span>)</td>
+<td>(<span class="math notranslate nohighlight">\({1/s^2}\)</span>)</td>
 <td>Second time-derivatives of C-B modal variables (up to first 99)</td>
 </tr>
 <tr class="row-even"><td><em>Node Kinematics</em></td>
 <td colspan="2">&#160;</td>
 </tr>
-<tr class="row-odd"><td><p class="first"><span class="math">\({M \alpha N \beta}\)</span> TDxss,</p>
-<p><span class="math">\(M \alpha N \beta\)</span> TDyss,</p>
-<p class="last"><span class="math">\(M \alpha N \beta\)</span> TDzss,</p>
+<tr class="row-odd"><td><p class="first"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> TDxss,</p>
+<p><span class="math notranslate nohighlight">\(M \alpha N \beta\)</span> TDyss,</p>
+<p class="last"><span class="math notranslate nohighlight">\(M \alpha N \beta\)</span> TDzss,</p>
 </td>
 <td><ol class="first last loweralpha simple" start="13">
 <li></li>
 </ol>
 </td>
-<td><p class="first">Nodal translational displacements of <span class="math">\(M \alpha N \beta\)</span></p>
+<td><p class="first">Nodal translational displacements of <span class="math notranslate nohighlight">\(M \alpha N \beta\)</span></p>
 <p class="last">(up to 81 designated locations) in SS coordinate system</p>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first"><span class="math">\({M \alpha N \beta}\)</span> RDxe,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> RDye,</p>
-<p class="last"><span class="math">\({M \alpha N \beta}\)</span> RDze</p>
+<tr class="row-even"><td><p class="first"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> RDxe,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> RDye,</p>
+<p class="last"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> RDze</p>
 </td>
 <td>(rad)</td>
-<td><p class="first">Nodal rotational displacements of <span class="math">\(M \alpha N \beta\)</span></p>
+<td><p class="first">Nodal rotational displacements of <span class="math notranslate nohighlight">\(M \alpha N \beta\)</span></p>
 <p class="last">(up to 81 designated locations) in member local coordinate system</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p class="first"><span class="math">\({M \alpha N \beta}\)</span> TAxe,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> TAye,</p>
-<p class="last"><span class="math">\({M \alpha N \beta}\)</span> TAze</p>
+<tr class="row-odd"><td><p class="first"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> TAxe,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> TAye,</p>
+<p class="last"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> TAze</p>
 </td>
-<td>(<span class="math">\({m/s^2}\)</span>)</td>
-<td><p class="first">Nodal translational accelerations  of <span class="math">\(M \alpha N \beta\)</span></p>
+<td>(<span class="math notranslate nohighlight">\({m/s^2}\)</span>)</td>
+<td><p class="first">Nodal translational accelerations  of <span class="math notranslate nohighlight">\(M \alpha N \beta\)</span></p>
 <p class="last">(up to 81 designated locations) in member local coordinate system</p>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first"><span class="math">\({M \alpha N \beta}\)</span> RAxe,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> RAye,</p>
-<p class="last"><span class="math">\({M \alpha N \beta}\)</span> RAze</p>
+<tr class="row-even"><td><p class="first"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> RAxe,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> RAye,</p>
+<p class="last"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> RAze</p>
 </td>
-<td>(<span class="math">\({rad/s^2}\)</span>)</td>
-<td><p class="first">Nodal rotational accelerations  of <span class="math">\(M \alpha N \beta\)</span></p>
+<td>(<span class="math notranslate nohighlight">\({rad/s^2}\)</span>)</td>
+<td><p class="first">Nodal rotational accelerations  of <span class="math notranslate nohighlight">\(M \alpha N \beta\)</span></p>
 <p class="last">(up to 81 designated locations) in member local coordinate system</p>
 </td>
 </tr>
 <tr class="row-odd"><td><em>Node Forces and Moments</em></td>
 <td colspan="2">&#160;</td>
 </tr>
-<tr class="row-even"><td><p class="first"><span class="math">\({M \alpha N \beta}\)</span> FKxe,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> FKye,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> FKze</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> MKxe,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> MKye,</p>
-<p class="last"><span class="math">\({M \alpha N \beta}\)</span> MKze</p>
+<tr class="row-even"><td><p class="first"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> FKxe,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> FKye,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> FKze</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> MKxe,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> MKye,</p>
+<p class="last"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> MKze</p>
 </td>
 <td><p class="first">(N),</p>
 <p>(N),</p>
@@ -312,15 +312,15 @@ refer to the local (member) reference system and they have suffixes
 <p class="last">(Nm)</p>
 </td>
 <td><p class="first">Static (elastic) component of reaction forces and moments</p>
-<p class="last">at <span class="math">\(M \alpha N \beta\)</span>  along local member coordinate system</p>
+<p class="last">at <span class="math notranslate nohighlight">\(M \alpha N \beta\)</span>  along local member coordinate system</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p class="first"><span class="math">\({M \alpha N \beta}\)</span> FMxe,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> FMye,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> FMze</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> MMxe,</p>
-<p><span class="math">\({M \alpha N \beta}\)</span> MMye,</p>
-<p class="last"><span class="math">\({M \alpha N \beta}\)</span> MMze</p>
+<tr class="row-odd"><td><p class="first"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> FMxe,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> FMye,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> FMze</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> MMxe,</p>
+<p><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> MMye,</p>
+<p class="last"><span class="math notranslate nohighlight">\({M \alpha N \beta}\)</span> MMze</p>
 </td>
 <td><p class="first">(N),</p>
 <p>(N),</p>
@@ -330,7 +330,7 @@ refer to the local (member) reference system and they have suffixes
 <p class="last">(Nm)</p>
 </td>
 <td><p class="first">Dynamic (inertial) component of reaction forces and moments</p>
-<p class="last">at <span class="math">\(M \alpha N \beta\)</span>  along local member coordinate system</p>
+<p class="last">at <span class="math notranslate nohighlight">\(M \alpha N \beta\)</span>  along local member coordinate system</p>
 </td>
 </tr>
 </tbody>
@@ -357,7 +357,7 @@ refer to the local (member) reference system and they have suffixes
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, National Renewable Energy Laboratory.
+        &copy; Copyright 2017, National Renewable Energy Laboratory
 
     </p>
   </div>
@@ -376,21 +376,24 @@ refer to the local (member) reference system and they have suffixes
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
   
 

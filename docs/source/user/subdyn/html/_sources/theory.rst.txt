@@ -31,7 +31,7 @@ models, including material nonlinearity, axial shortening caused by
 bending, large displacements, and so on. The material nonlinearity is
 not considered here because most offshore multimember support structures
 are designed to use steel and the maximum stress is intended to be below
-the yield strength of the material. Damiani et al. (2013) demonstrate
+the yield strength of the material. :cite:`damiani2013omae` demonstrate
 that a linear finite-element method is suitable when analyzing wind
 turbine substructures. In this work, several wind turbine configurations
 that varied in base geometry, load paths, sizes, supported towers, and
@@ -92,11 +92,12 @@ framework, the main coordinate systems used in the module, and the
 theory pertaining to the LFEB, the C-B reduction, and SIM. The
 state-space formulations to be used in the time-domain simulation are
 also presented. The last section discusses the calculation of the base
-reaction calculation. For further details, see also Song et al. (2013).
+reaction calculation. For further details, see also :cite:`song2013`.
 
 Integration with the FAST Modularization Framework
 --------------------------------------------------
-Based on a new modularization framework (Jonkman 2013), FAST joins an
+
+Based on a new modularization framework :cite:`jonkman2013`, FAST joins an
 aerodynamics module, a hydrodynamics module, a control and electrical
 system (servo) module, and structural-dynamics (elastic) modules to
 enable coupled nonlinear aero-hydro-servo-elastic analysis of land-based
@@ -144,7 +145,7 @@ Coordinate Systems
 .. _global-cs:
 
 .. figure:: figs/global-cs.png
-   :width: 50%
+   :width: 40%
            
    Global (coincident with the substructure) coordinate system.
    Also shown are the DOFs associated with the TP reference point.
@@ -249,8 +250,8 @@ In the current SubDyn release, the transpose (global to local) of these
 direction cosine matrices for each member is returned in the summary
 file. Given the circular shape of the member cross sections, the
 direction cosine matrices have little importance on the member load
-verification. To verify joints following the standards (e.g., ISO 19902,
-API RP-2A), however, the bending moments need to be decomposed into
+verification. To verify joints following the standards (e.g., :cite:`iso19902, apirp2a2014`
+), however, the bending moments need to be decomposed into
 in-plane and out-of-plane components, where the plane is that defined by
 either a pair of braces (for an X-joint), or by the pair brace(s) plus
 leg (for a K-joint). It is therefore important to have the direction
@@ -284,7 +285,7 @@ Element Formulation
 
 Following the classic Timoshenko beam theory, the generic two-node
 element stiffness and consistent mass matrices can be written as follows
-(see, for instance, Panzer et al. 2009):
+(see, for instance, :cite:`panzer2009`):
 
  .. math:: 	:label: ke
 
@@ -352,7 +353,7 @@ and
    
    	
 
-Eq. :eq:`kaxy` is from Steinboeck et al. (2013) for hollow circular cross sections,
+Eq. :eq:`kaxy` is from :cite:`steinboeck2013` for hollow circular cross sections,
 with :math:`\mu` denoting Poisson’s ratio.
 
 Before assembling the global system stiffness (*K*) and mass (*M*)
@@ -454,7 +455,7 @@ substructure finite-element model into a reduced DOF model that
 maintains the fundamental low-frequency response modes of the structure.
 With the C-B method, the DOFs of the substructure can be reduced to
 about 10 (user defined, see also Section :ref:`_CBguide`). This system reduction method
-was first introduced by Hurty (1964) and later expanded by :cite:`craig1968`.
+was first introduced by :cite:`hurty1964` and later expanded by :cite:`craig1968`.
 
 In SubDyn’s C-B reduction, the substructure nodes are separated into two
 groups: 1) the boundary nodes (identified with a subscript “\ *R*\ ” in
@@ -519,7 +520,7 @@ between physical DOFs and generalized DOFs can be written as:
 
 .. math::  :label: CB1
 
-        \begin{pmatrix} 
+        \begin{bmatrix} 
         	U_R \\ 
                 U_L 
         \end{bmatrix} =
@@ -711,7 +712,7 @@ related to each other as follows:
 
 	U_R = T_I U_{TP}
 
-where :math:`T_I` is a:math:`{\left(6 NIN \right) \times 6}` matrix, :math:`NIN` is the number of interface nodes, and :math:`{U_{TP}}` is the 6 DOFs
+where :math:`T_I` is a :math:`{\left(6 NIN \right) \times 6}` matrix, :math:`NIN` is the number of interface nodes, and :math:`{U_{TP}}` is the 6 DOFs
 of the rigid transition piece. The matrix :math:`T_I` can be written as follows:
 
 .. math:: :label: TI
@@ -891,7 +892,7 @@ where
 
 	A = \begin{bmatrix}
 		0 & I \\ 
-		-\Omega_m^2 -2 \zeta \Omega_m
+		-\Omega_m^2 & -2 \zeta \Omega_m
             \end{bmatrix}
 
 	B = \begin{bmatrix}
@@ -904,8 +905,7 @@ where
             \end{bmatrix}
 
 
-In SubDyn, the outputs to the ElastoDyn module are the reaction forces
-  at the transition piece :math:`F_{TP}`:
+In SubDyn, the outputs to the ElastoDyn module are the reaction forces at the transition piece :math:`F_{TP}`:
 
 .. math:: :label: y1
 
@@ -1095,6 +1095,7 @@ time integrator options for loose coupling are:
 For more information, consult any numerical methods reference, e.g.,
 :cite:`chapra2010`.
 
+.. _sim:
 
 Static-Improvement Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~

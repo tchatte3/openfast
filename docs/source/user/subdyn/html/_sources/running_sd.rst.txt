@@ -24,7 +24,7 @@ FAST.
 Stand-Alone SubDyn Archive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Users can download the stand-alone SubDyn archive from our Web server at
+Users can refer to :numref:`installation` download the stand-alone SubDyn archive from our Web server at
 `*https://nwtc.nrel.gov/SubDyn* <https://nwtc.nrel.gov/SubDyn>`__. The
 file has a name similar to *SD\_v1.03.00a-rrd.exe*, but may have a
 different version number. The user can then download the self-extracting
@@ -88,8 +88,8 @@ for example:
     >SubDyn_win32.exe MyDriverFile.dvr
 
 where, *MyDriverFile.dvr* is the name of the SubDyn driver file, as
-described in Section :ref:`main-input-file`. The SubDyn primary input file is described in
-Section :ref:`driver-input-file`.
+described in Section :numref:`main-input-file`. The SubDyn primary input file is described in
+Section :numref:`driver-input-file`.
 
 
 Running SubDyn Coupled to FAST  

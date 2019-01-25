@@ -112,6 +112,9 @@
 <li class="toctree-l1"><a class="reference internal" href="appendixD.html">Appendix D. List of Output Channels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixE.html">Appendix E. Compiling Stand-Alone SubDyn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendixF.html">Appendix F. Major Changes in SubDyn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UsrPtfm_theory.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UsrPtfm_theory.html#integration-with-the-fast-modularization-framework">Integration with the FAST Modularization Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UsrPtfm_theory.html#dynamic-system-of-equations-and-c-b-reduction">Dynamic System of Equations and C-B Reduction</a></li>
 </ul>
 
             
@@ -195,14 +198,14 @@ for the stand-alone SubDyn and one for the coupled solution through
 FAST.</p>
 <div class="section" id="stand-alone-subdyn-archive">
 <h3>Stand-Alone SubDyn Archive<a class="headerlink" href="#stand-alone-subdyn-archive" title="Permalink to this headline">¶</a></h3>
-<p>Users can download the stand-alone SubDyn archive from our Web server at
+<p>Users can refer to <code class="xref std std-numref docutils literal notranslate"><span class="pre">installation</span></code> download the stand-alone SubDyn archive from our Web server at
 <a class="reference external" href="https://nwtc.nrel.gov/SubDyn">*https://nwtc.nrel.gov/SubDyn*</a>. The
 file has a name similar to <em>SD_v1.03.00a-rrd.exe</em>, but may have a
 different version number. The user can then download the self-extracting
 archive (.exe) to expand the archive into a folder he/she specifies.</p>
 <div class="figure" id="id3">
 <span id="self-extractor"></span><a class="reference internal image-reference" href="figs/self-extractor.png"><img alt="figs/self-extractor.png" src="figs/self-extractor.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">WinZip Self-Extractor main window &#8211;TO REPLACE WITH CURRENT</span></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">WinZip Self-Extractor main window –TO REPLACE WITH CURRENT</span></p>
 </div>
 <p>ARCHIVE METHODS ETC.</p>
 <p>The archive contains the <strong>bin</strong>, <strong>CertTest</strong>, <strong>Compiling</strong>,
@@ -246,18 +249,18 @@ the stand-alone SubDyn (see Section 4 for more information regarding the
 SubDyn output files).</p>
 <p>Run the standalone SubDyn software from a DOS command prompt by typing,
 for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&gt;SubDyn_win32.exe MyDriverFile.dvr
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;SubDyn_win32.exe MyDriverFile.dvr
 </pre></div>
 </div>
 <p>where, <em>MyDriverFile.dvr</em> is the name of the SubDyn driver file, as
-described in Section <span class="xref std std-ref">main-input-file</span>. The SubDyn primary input file is described in
-Section <a class="reference internal" href="input_files.html#driver-input-file"><span class="std std-ref">SubDyn Driver Input File</span></a>.</p>
+described in Section <code class="xref std std-numref docutils literal notranslate"><span class="pre">main-input-file</span></code>. The SubDyn primary input file is described in
+Section <code class="xref std std-numref docutils literal notranslate"><span class="pre">driver-input-file</span></code>.</p>
 </div>
 <div class="section" id="running-subdyn-coupled-to-fast">
 <h3>Running SubDyn Coupled to FAST<a class="headerlink" href="#running-subdyn-coupled-to-fast" title="Permalink to this headline">¶</a></h3>
 <p>Run the coupled FAST software from a DOS command prompt by typing, for
 example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&gt;FAST_Win32.exe Test21.fst
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;FAST_Win32.exe Test21.fst
 </pre></div>
 </div>
 <p>where, <em>Test21.fst</em> is the name of the primary FAST input file. This
@@ -289,7 +292,7 @@ information.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, National Renewable Energy Laboratory.
+        &copy; Copyright 2017, National Renewable Energy Laboratory
 
     </p>
   </div>
@@ -308,21 +311,24 @@ information.</p>
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
   
 

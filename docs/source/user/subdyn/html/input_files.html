@@ -218,7 +218,7 @@ convention of <strong>OutRootName.dvr.ech</strong>. <strong>OutRootName</strong>
 in the SUBDYN section of the driver input file (see below).</p>
 <p>Set the gravity constant using the <strong>Gravity</strong> parameter. SubDyn
 expects a magnitude, so in SI units this would be set to 9.80665
-<span class="math">\(\frac{m}{s^{2}}\)</span> for standard gravity. <strong>WtrDpth</strong> specifies
+<span class="math notranslate nohighlight">\(\frac{m}{s^{2}}\)</span> for standard gravity. <strong>WtrDpth</strong> specifies
 the water depth (depth of the seabed), based on the reference MSL, and
 must be a value greater than zero.</p>
 <p><strong>SDInputFile</strong> is the file name of the primary SubDyn input file.
@@ -272,43 +272,43 @@ in the driver file.</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Time step value</td>
-<td><div class="first last math">
+<td><div class="first last math notranslate nohighlight">
 \[s\]</div>
 </td>
 </tr>
 <tr class="row-odd"><td>2-4</td>
 <td>TP reference point translational displacements along <em>X</em>, <em>Y</em>, and <em>Z</em></td>
-<td><div class="first last math">
+<td><div class="first last math notranslate nohighlight">
 \[m\]</div>
 </td>
 </tr>
 <tr class="row-even"><td>5-7</td>
 <td>TP reference point rotational displacements about <em>X</em>, <em>Y</em>, and <em>Z</em> (small angle assumptions apply)</td>
-<td><div class="first last math">
+<td><div class="first last math notranslate nohighlight">
 \[\text{radians}\]</div>
 </td>
 </tr>
 <tr class="row-odd"><td>8-10</td>
 <td>TP reference point translational velocities along <em>X</em>, <em>Y</em>, and <em>Z</em></td>
-<td><div class="first last math">
+<td><div class="first last math notranslate nohighlight">
 \[\frac{m}{s}\]</div>
 </td>
 </tr>
 <tr class="row-even"><td>11-13</td>
 <td>TP reference point rotational velocities about <em>X</em>, <em>Y</em>, and <em>Z</em></td>
-<td><div class="first last math">
+<td><div class="first last math notranslate nohighlight">
 \[\frac{\text{radians}}{s}\]</div>
 </td>
 </tr>
 <tr class="row-odd"><td>14-16</td>
 <td>TP reference point translational accelerations along <em>X</em>, <em>Y</em>, and <em>Z</em></td>
-<td><div class="first last math">
+<td><div class="first last math notranslate nohighlight">
 \[\frac{m}{s^{2}}\]</div>
 </td>
 </tr>
 <tr class="row-even"><td>17-19</td>
 <td>TP reference point rotational accelerations about <em>X</em>, <em>Y</em>, and <em>Z</em></td>
-<td><div class="first last math">
+<td><div class="first last math notranslate nohighlight">
 \[\frac{\text{radians}}{s^{2}}\]</div>
 </td>
 </tr>
@@ -316,7 +316,7 @@ in the driver file.</p>
 </table>
 </div>
 <div class="section" id="subdyn-primary-input-file">
-<h2>SubDyn Primary Input File<a class="headerlink" href="#subdyn-primary-input-file" title="Permalink to this headline">¶</a></h2>
+<span id="main-input-file"></span><h2>SubDyn Primary Input File<a class="headerlink" href="#subdyn-primary-input-file" title="Permalink to this headline">¶</a></h2>
 <p>The SubDyn input file defines the substructure geometry, integration and
 simulation options, finite-element parameters, and output channels. The
 geometry of members is defined by joint coordinates of the undisplaced
@@ -584,8 +584,8 @@ format strings. They need to be valid Fortran format strings.
 the channel data. Therefore, in order for the headers and channel data
 to align properly, the width specification should match. For example:</p>
 <div class="line-block">
-<div class="line">&#8220;ES11.4&#8221; OutFmt</div>
-<div class="line">&#8220;A11&#8221; OutSFmt.</div>
+<div class="line">“ES11.4” OutFmt</div>
+<div class="line">“A11” OutSFmt.</div>
 </div>
 </div>
 <div class="section" id="member-output-list">
@@ -636,15 +636,15 @@ elements account for both pile and soil effects. No additional damping
 can be provided at this point.</p>
 <p>The order of the elements is not important, because each element value
 is accompanied by a string label that identifies the actual element. The
-stiffness matrix accepted labels are: &#8216;Kxx&#8217;, &#8216;Kxy&#8217;, &#8216;Kyy&#8217;, &#8216;Kxz&#8217;, &#8216;Kyz’,
-&#8216;Kzz’, &#8216;Kxtx&#8217;, &#8216;Kytx&#8217;, &#8216;Kztx&#8217;, &#8216;Ktxtx&#8217;, &#8216;Kxty&#8217;, &#8216;Kyty&#8217;,&#8217;Kzty’, &#8216;Ktxty&#8217;,
-&#8216;Ktyty&#8217;, ‘Kxtz&#8217;, &#8216;Kytz&#8217;, &#8216;Kztz&#8217;, &#8216;Ktxtz&#8217;, &#8216;Ktytz&#8217;, &#8216;Ktztz&#8217;.</p>
+stiffness matrix accepted labels are: ‘Kxx’, ‘Kxy’, ‘Kyy’, ‘Kxz’, ‘Kyz’,
+‘Kzz’, ‘Kxtx’, ‘Kytx’, ‘Kztx’, ‘Ktxtx’, ‘Kxty’, ‘Kyty’,’Kzty’, ‘Ktxty’,
+‘Ktyty’, ‘Kxtz’, ‘Kytz’, ‘Kztz’, ‘Ktxtz’, ‘Ktytz’, ‘Ktztz’.</p>
 <p>If any matrix element is not provided it will be set to infinity (i.e.,
 machine ‘huge’) by default.</p>
 <p>For the mass matrix the accepted labels are:
-&#8216;Mxx&#8217;,&#8217;Mxy&#8217;,&#8217;Myy&#8217;,&#8217;Mxz&#8217;,&#8217;Myz&#8217;, &#8216;Mzz&#8217;,&#8217;Mxtx&#8217;,&#8217;Mytx&#8217;,&#8217;Mztx&#8217;, &#8216;Mtxtx&#8217;,
-&#8216;Mxty&#8217;, &#8216;Myty&#8217;, &#8216;Mzty&#8217;, &#8216;Mtxty&#8217;, &#8216;Mtyty&#8217;, &#8216;Mxtz&#8217;, &#8216;Mytz&#8217;, &#8216;Mztz&#8217;,
-&#8216;Mtxtz&#8217;, &#8216;Mtytz&#8217;, &#8216;Mtztz&#8217;. If any matrix element is not provided it will
+‘Mxx’,’Mxy’,’Myy’,’Mxz’,’Myz’, ‘Mzz’,’Mxtx’,’Mytx’,’Mztx’, ‘Mtxtx’,
+‘Mxty’, ‘Myty’, ‘Mzty’, ‘Mtxty’, ‘Mtyty’, ‘Mxtz’, ‘Mytz’, ‘Mztz’,
+‘Mtxtz’, ‘Mtytz’, ‘Mtztz’. If any matrix element is not provided it will
 be set to 0 by default. The labels contain ‘K’ or ‘M’ to specify
 stiffness or mass matrix elements, and then the directions they apply
 to, e.g., ‘Kxy’ refers to the force along x due to a unit displacement
@@ -678,7 +678,7 @@ be removed, therefore the associated matrix elements will be ignored.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, National Renewable Energy Laboratory.
+        &copy; Copyright 2017, National Renewable Energy Laboratory
 
     </p>
   </div>
@@ -697,21 +697,24 @@ be removed, therefore the associated matrix elements will be ignored.</p>
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
   
 
