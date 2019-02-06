@@ -749,13 +749,18 @@ SUBROUTINE AssembleKM(Init,p, ErrStat, ErrMsg)
       ! add concentrated mass 
    DO I = 1, Init%NCMass
 
-      ixy=-Init%CMass(I, 2) * (Init%CMass(I, 9)  * Init%CMass(I, 10))
-      ixz=-Init%CMass(I, 2) * (Init%CMass(I, 9)  * Init%CMass(I, 11))
-      iyz=-Init%CMass(I, 2) * (Init%CMass(I, 10) * Init%CMass(I, 11))
+      ixy=-Init%CMass(I, 2) * (Init%CMass(I, 9)  * Init%CMass(I, 10)) !-m*xG*yG
+      ixz=-Init%CMass(I, 2) * (Init%CMass(I, 9)  * Init%CMass(I, 11)) !-m*xG*zG
+      iyz=-Init%CMass(I, 2) * (Init%CMass(I, 10) * Init%CMass(I, 11)) !-m*yG*zG
 
+      jn = Init%CMass(I, 1)*6-5 !starting index in M matrix
        DO J = 1, 3
-          r = ( NINT(Init%CMass(I, 1)) - 1 )*6 + J
+          !!!r = ( NINT(Init%CMass(I, 1)) - 1 )*6 + J   !check NDIV and how this plays, and then 1st or 2nd node
+          r= jn + J-1 
+          PRINT *, 'CMass I=',I, 'J,Jn=',J,'  ',jn,'  index in M  r=',r
+   
           Init%M(r, r) = Init%M(r, r) + Init%CMass(I, 2)
+          
           SELECT CASE(J)
           CASE (1)
               adder= Init%CMass(I, 2)*(/Init%CMass(I, 11),-Init%CMass(I, 10)/) !I believe this should be Init%CMass(I,2)*.... not (I,1)!
@@ -763,17 +768,20 @@ SUBROUTINE AssembleKM(Init,p, ErrStat, ErrMsg)
               Init%M(r+4:r+5, r)     =Init%M(r+4:r+5,r)      +  adder
           CASE (2)
               adder = Init%CMass(I, 2)*(/-Init%CMass(I, 11),Init%CMass(I,9)/)
-              Init%M(r, (/r+3,r+5/)-1) =Init%M(r, (/r+3,r+5/)-1) + adder !forgot to account for r increasing here, so subtract 1
-              Init%M((/r+3,r+5/)-1,r)  =Init%M((/r+3,r+5/)-1,r)  + adder
+              Init%M(r, (/r+2,r+4/)) =Init%M(r, (/r+2,r+4/)) + adder !forgot to account for r increasing here, so subtract 1
+              Init%M((/r+2,r+4/),r)  =Init%M((/r+2,r+3/),r)  + adder
           CASE (3)
               adder =  Init%CMass(I, 2)*(/Init%CMass(I, 10),-Init%CMass(I, 9)/) !here 10 instead of 11 in the index!
-              Init%M(r, (/r+3,r+4/)-2) =Init%M(r, (/r+3,r+4/)-2) + adder  !forgot to account for r increasing here, so subtract 2
-              Init%M((/r+3,r+4/)-2,r)  =Init%M((/r+3,r+4/)-2,r)  + adder
+              Init%M(r, (/r+1,r+2/)) =Init%M(r, (/r+1,r+2/)) + adder  !forgot to account for r increasing here, so subtract 2
+              Init%M((/r+1,r+2/),r)  =Init%M((/r+1,r+2/),r)  + adder
           END SELECT
       ENDDO
 
       DO J = 4, 6
-          r = ( NINT(Init%CMass(I, 1)) - 1 )*6 + J
+          !!!r = ( NINT(Init%CMass(I, 1)) - 1 )*6 + J
+          r= jn + J-1 
+          PRINT *, 'CMass I=',I, 'J,Jn=',J,'  ',Jn,'  index in M  r=',r, 'CMASS(J-1) added=', Init%CMass(I, J-1) !debug
+          
           Init%M(r, r) = Init%M(r, r) + Init%CMass(I, J-1) 
           SELECT CASE(J)
           CASE (4)
@@ -784,13 +792,13 @@ SUBROUTINE AssembleKM(Init,p, ErrStat, ErrMsg)
           CASE (5)
               Init%M(r, r) = Init%M(r, r) + Init%CMass(I, 2) * (Init%CMass(I, 9)**2+Init%CMass(I, 11)**2)
               adder=  (/Init%CMass(I, 6) +ixy ,Init%CMass(I,8) +iyz/)
-              Init%M(r, (/r+3,r+5/)-4) =Init%M(r, (/r+3,r+5/)-4)  + adder
-              Init%M((/r+3,r+5/)-4,r)  =Init%M((/r+3,r+5/)-4,r)   + adder
+              Init%M(r, (/r-1,r+1/)) =Init%M(r, (/r-1,r+1/))  + adder
+              Init%M((/r-1,r+1/),r)  =Init%M((/r-1,r+1/),r)   + adder
           CASE (6)
               Init%M(r, r) = Init%M(r, r) + Init%CMass(I, 2) * (Init%CMass(I, 9)**2+Init%CMass(I, 10)**2)
               adder=  (/Init%CMass(I, 7) +ixz, Init%CMass(I, 8) +iyz/)
-              Init%M(r, (/r+3,r+4/)-5) =Init%M(r, (/r+3,r+4/)-5)  + adder
-              Init%M((/r+3,r+4/)-5,r)  =Init%M((/r+3,r+4/)-5,r)   + adder
+              Init%M(r, (/r-2,r-1/)) =Init%M(r, (/r-2,r-1/))  + adder
+              Init%M((/r-2,r-1/),r)  =Init%M((/r-2,r-1/),r)   + adder
           END SELECT
 
       ENDDO
