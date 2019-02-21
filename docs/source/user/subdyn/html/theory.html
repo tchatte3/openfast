@@ -95,8 +95,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#integration-with-the-fast-modularization-framework">Integration with the FAST Modularization Framework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#coordinate-systems">Coordinate Systems</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#global-and-substructure-coordinate-system-x-y-z-or-global-cs">Global and Substructure Coordinate System: (<em>X</em>, <em>Y</em>, <em>Z</em>) or (<span class="math notranslate nohighlight">\({X_{SS}, Y_{SS}, Z_{SS}}\)</span>) (<code class="docutils literal notranslate"><span class="pre">global-cs</span></code>)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#member-or-element-local-coordinate-system-element-cs">Member or Element Local Coordinate System (<span class="math notranslate nohighlight">\({x_e, y_e, z_e}\)</span>) (<code class="docutils literal notranslate"><span class="pre">element-cs</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-and-substructure-coordinate-system-x-y-z-or-x-ss-y-ss-z-ss-global-cs">Global and Substructure Coordinate System: (<em>X</em>, <em>Y</em>, <em>Z</em>) or (<span class="math notranslate nohighlight">\({X_{SS}, Y_{SS}, Z_{SS}}\)</span>) (<code class="docutils literal notranslate"><span class="pre">global-cs</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#member-or-element-local-coordinate-system-x-e-y-e-z-e-element-cs">Member or Element Local Coordinate System (<span class="math notranslate nohighlight">\({x_e, y_e, z_e}\)</span>) (<code class="docutils literal notranslate"><span class="pre">element-cs</span></code>)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#local-to-global-transformation">Local to Global Transformation</a></li>
 </ul>
 </li>
@@ -125,7 +125,6 @@
 <li class="toctree-l1"><a class="reference internal" href="appendixF.html">Appendix F. Major Changes in SubDyn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UsrPtfm_theory.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UsrPtfm_theory.html#integration-with-the-fast-modularization-framework">Integration with the FAST Modularization Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UsrPtfm_theory.html#linear-finite-element-beam-model">Linear Finite-Element Beam Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UsrPtfm_theory.html#dynamic-system-of-equations-and-c-b-reduction">Dynamic System of Equations and C-B Reduction</a></li>
 </ul>
 
@@ -319,8 +318,8 @@ integrator for tight coupling.</p>
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Global (coincident with the substructure) coordinate system.
 Also shown are the DOFs associated with the TP reference point.</span></p>
 </div>
-<div class="section" id="global-and-substructure-coordinate-system-x-y-z-or-global-cs">
-<h3>Global and Substructure Coordinate System: (<em>X</em>, <em>Y</em>, <em>Z</em>) or (<span class="math notranslate nohighlight">\({X_{SS}, Y_{SS}, Z_{SS}}\)</span>) (<a class="reference internal" href="#global-cs"><span class="std std-numref">Fig. 4</span></a>)<a class="headerlink" href="#global-and-substructure-coordinate-system-x-y-z-or-global-cs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="global-and-substructure-coordinate-system-x-y-z-or-x-ss-y-ss-z-ss-global-cs">
+<h3>Global and Substructure Coordinate System: (<em>X</em>, <em>Y</em>, <em>Z</em>) or (<span class="math notranslate nohighlight">\({X_{SS}, Y_{SS}, Z_{SS}}\)</span>) (<a class="reference internal" href="#global-cs"><span class="std std-numref">Fig. 4</span></a>)<a class="headerlink" href="#global-and-substructure-coordinate-system-x-y-z-or-x-ss-y-ss-z-ss-global-cs" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>The global axes are represented by the unit vectors <span class="math notranslate nohighlight">\({\hat{I}, \hat{J}}\)</span>, and <span class="math notranslate nohighlight">\({\hat{K}}\)</span>.</li>
 <li>The origin is set at the intersection between the undeflected tower
@@ -335,8 +334,8 @@ right-handed Cartesian coordinate system (directed to the left when
 looking in the nominal downwind direction).</li>
 </ul>
 </div>
-<div class="section" id="member-or-element-local-coordinate-system-element-cs">
-<h3>Member or Element Local Coordinate System (<span class="math notranslate nohighlight">\({x_e, y_e, z_e}\)</span>) (<a class="reference internal" href="#element-cs"><span class="std std-numref">Fig. 5</span></a>)<a class="headerlink" href="#member-or-element-local-coordinate-system-element-cs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="member-or-element-local-coordinate-system-x-e-y-e-z-e-element-cs">
+<h3>Member or Element Local Coordinate System (<span class="math notranslate nohighlight">\({x_e, y_e, z_e}\)</span>) (<a class="reference internal" href="#element-cs"><span class="std std-numref">Fig. 5</span></a>)<a class="headerlink" href="#member-or-element-local-coordinate-system-x-e-y-e-z-e-element-cs" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Axes are represented by the unit vectors <span class="math notranslate nohighlight">\({\hat{i}_e, \hat{j}_e, \hat{k}_e}\)</span>.</li>
 <li>The origin is set at the shear center of the cross section at the
@@ -1049,12 +1048,12 @@ dynamic solution.</p>
 <p>Recalling the previous C-B formulation <a class="reference internal" href="#equation-cb3">(23)</a>, and adding the total static
 deflection of all the internal DOFs (<span class="math notranslate nohighlight">\(U_{L0}\)</span>), and subtracting the static
 deflection associated with C-B modes (<span class="math notranslate nohighlight">\(U_{L0m}\)</span>), the SIM formulation is cast as
-in <a class="reference internal" href="#equation-sim">(47)</a>:</p>
-<div class="math notranslate nohighlight" id="equation-sim">
-<span class="eqno">(47)<a class="headerlink" href="#equation-sim" title="Permalink to this equation">¶</a></span>\[U_L = \hat{U}_L + U_{L0} - U_{L0m} = \underbrace{\Phi_R U_R + \Phi_m q_m}_{\hat{U}_L}  +  U_{L0} - U_{L0m}\]</div>
-<p>Eq. <a class="reference internal" href="#equation-sim">(47)</a> can be rewritten as:</p>
-<div class="math notranslate nohighlight" id="equation-sim2">
-<span class="eqno">(48)<a class="headerlink" href="#equation-sim2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+in <a class="reference internal" href="UsrPtfm_theory.html#equation-sim">(60)</a>:</p>
+<div class="math notranslate nohighlight">
+\[U_L = \hat{U}_L + U_{L0} - U_{L0m} = \underbrace{\Phi_R U_R + \Phi_m q_m}_{\hat{U}_L}  +  U_{L0} - U_{L0m}\]</div>
+<p>Eq. <a class="reference internal" href="UsrPtfm_theory.html#equation-sim">(60)</a> can be rewritten as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
         U_R \\
         U_L
 \end{bmatrix} =
@@ -1069,23 +1068,23 @@ in <a class="reference internal" href="#equation-sim">(47)</a>:</p>
         q_{m0}
 \end{bmatrix}\end{split}\]</div>
 <p>with:</p>
-<div class="math notranslate nohighlight" id="equation-ul0">
-<span class="eqno">(49)<a class="headerlink" href="#equation-ul0" title="Permalink to this equation">¶</a></span>\[U_{L0} = \Phi_L q_{L0}\]</div>
-<div class="math notranslate nohighlight" id="equation-ul0m">
-<span class="eqno">(50)<a class="headerlink" href="#equation-ul0m" title="Permalink to this equation">¶</a></span>\[U_{L0m} = \Phi_m q_{m0}\]</div>
+<div class="math notranslate nohighlight">
+\[U_{L0} = \Phi_L q_{L0}\]</div>
+<div class="math notranslate nohighlight">
+\[U_{L0m} = \Phi_m q_{m0}\]</div>
 <p>where <span class="math notranslate nohighlight">\({q_{m0}}\)</span> and <span class="math notranslate nohighlight">\({q_{L0}}\)</span> are the <em>m</em> and <em>L</em> modal coefficients that are assumed to be
-operating in a static fashion. For Eqs. <a class="reference internal" href="#equation-sim2">(48)</a> and <a class="reference internal" href="#equation-ul0">(49)</a> to be valid, and are
+operating in a static fashion. For Eqs. <a class="reference internal" href="UsrPtfm_theory.html#equation-sim2">(61)</a> and <a class="reference internal" href="UsrPtfm_theory.html#equation-ul0">(62)</a> to be valid, and are
 calculated under the C-B hypothesis that the boundary nodes are fixed.</p>
 <p>The static displacement vectors can also be calculated as follows:</p>
-<div class="math notranslate nohighlight" id="equation-sim3">
-<span class="eqno">(51)<a class="headerlink" href="#equation-sim3" title="Permalink to this equation">¶</a></span>\[K_{LL} U_{L0} = F_L + F_{Lg}\]</div>
-<p>By making use of <a class="reference internal" href="#equation-ul0">(49)</a>, and by pre-multiplying both sides times , Eq. <a class="reference internal" href="#equation-sim3">(51)</a> can be
+<div class="math notranslate nohighlight">
+\[K_{LL} U_{L0} = F_L + F_{Lg}\]</div>
+<p>By making use of <a class="reference internal" href="UsrPtfm_theory.html#equation-ul0">(62)</a>, and by pre-multiplying both sides times , Eq. <a class="reference internal" href="UsrPtfm_theory.html#equation-sim3">(64)</a> can be
 rewritten as: <span class="math notranslate nohighlight">\({\Phi_L^T K_{LL} \Phi_L q_{L0} = \Phi_L^T  \left( F_L + F_{Lg} \right) = \tilde{F}_L }\)</span> or, recalling that <span class="math notranslate nohighlight">\({\Phi_L^T K_{LL} \Phi_L = \Omega_L^2}\)</span>, as: <span class="math notranslate nohighlight">\({\Omega_L^2 q_{L0} =\tilde{F}_L }\)</span>, or equivalently in terms of <span class="math notranslate nohighlight">\(U_{L0}\)</span>:</p>
-<div class="math notranslate nohighlight" id="equation-ul02">
-<span class="eqno">(52)<a class="headerlink" href="#equation-ul02" title="Permalink to this equation">¶</a></span>\[U_{L0} = \Phi_L \left[ \Omega_L^2 \right]^{-1} \tilde{F}_L\]</div>
+<div class="math notranslate nohighlight">
+\[U_{L0} = \Phi_L \left[ \Omega_L^2 \right]^{-1} \tilde{F}_L\]</div>
 <p>Similarly:</p>
-<div class="math notranslate nohighlight" id="equation-ul0m2">
-<span class="eqno">(53)<a class="headerlink" href="#equation-ul0m2" title="Permalink to this equation">¶</a></span>\[U_{L0m} = \Phi_m \left[ \Omega_m^2 \right]^{-1} \tilde{F}_m\]</div>
+<div class="math notranslate nohighlight">
+\[U_{L0m} = \Phi_m \left[ \Omega_m^2 \right]^{-1} \tilde{F}_m\]</div>
 <p>Note that: <span class="math notranslate nohighlight">\({ \dot{U}_{L0} = \dot{q}_{L0} = \dot{U}_{L0m} = \dot{q}_{m0} =0 }\)</span> and <span class="math notranslate nohighlight">\({ \ddot{U}_{L0} = \ddot{q}_{L0} = \ddot{U}_{L0m} = \ddot{q}_{m0} =0 }\)</span>.</p>
 <p>The dynamic component <span class="math notranslate nohighlight">\({ \hat{U} = \begin{bmatrix} \hat{U}_R \\ \hat{U}_R \end{bmatrix} }\)</span> is calculated following the usual procedure
 described in Sections <span class="xref std std-ref">_SSformulation</span> – <span class="xref std std-ref">_TimeIntegration</span>. For example, states are still
@@ -1094,8 +1093,8 @@ the reaction provided by the substructure at the TP interface, is also
 calculated as it was done previously in Eqs. <a class="reference internal" href="#equation-y1">(38)</a> and <a class="reference internal" href="#equation-y1">(38)</a>.</p>
 <p>However, the state-space formulation is slightly modified to allow for
 the calculation of the outputs to HydroDyn as:</p>
-<div class="math notranslate nohighlight" id="equation-y2sim">
-<span class="eqno">(55)<a class="headerlink" href="#equation-y2sim" title="Permalink to this equation">¶</a></span>\[\begin{split}y_2= = \begin{bmatrix}
+<div class="math notranslate nohighlight">
+\[\begin{split}y_2= = \begin{bmatrix}
         \bar{U}_R \\
              U_L  \\
         \dot{\bar{U}}_R  \\
@@ -1110,11 +1109,11 @@ the calculation of the outputs to HydroDyn as:</p>
         \ddot{\bar{U}}_R  \\
         \ddot{U}_L \\
      \end{bmatrix}\end{split}\]</div>
-<div class="math notranslate nohighlight" id="equation-y2sim">
-<span class="eqno">(55)<a class="headerlink" href="#equation-y2sim" title="Permalink to this equation">¶</a></span>\[Y_2 = C_2 x + D_2 u + F_{Y2}\]</div>
+<div class="math notranslate nohighlight">
+\[Y_2 = C_2 x + D_2 u + F_{Y2}\]</div>
 <p>where the matrices now have the following meaning:</p>
-<div class="math notranslate nohighlight" id="equation-c2d2fy2sim">
-<span class="eqno">(56)<a class="headerlink" href="#equation-c2d2fy2sim" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\begin{split}C_2 = \begin{bmatrix}
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}C_2 = \begin{bmatrix}
        0 &amp; 0 \\
        \Phi_m &amp; 0 \\
        0 &amp; 0 \\
@@ -1137,11 +1136,11 @@ the calculation of the outputs to HydroDyn as:</p>
        \Phi_m \Phi_m^T F_{Lg}
       \end{bmatrix}\end{split}\end{aligned}\end{align} \]</div>
 <p>Finally, the element forces can be calculated as:</p>
-<div class="math notranslate nohighlight" id="equation-el-loads-sim">
-<span class="eqno">(57)<a class="headerlink" href="#equation-el-loads-sim" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\text{Element Inertia load:} ~~ F_I^e = [m] \ddot{U}_e\\\text{Element Static load:} ~~ F_S^e = [k] U_e = [k] \left[ \hat{U}_e + U_{L0,e} - U_{L0m,e} \right]\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\text{Element Inertia load:} ~~ F_I^e = [m] \ddot{U}_e\\\text{Element Static load:} ~~ F_S^e = [k] U_e = [k] \left[ \hat{U}_e + U_{L0,e} - U_{L0m,e} \right]\end{aligned}\end{align} \]</div>
 <p>with the element node DOFs expressed as:</p>
-<div class="math notranslate nohighlight" id="equation-uesim">
-<span class="eqno">(58)<a class="headerlink" href="#equation-uesim" title="Permalink to this equation">¶</a></span>\[U_e = \hat{U}_e + U_{L0,e} - U_{L0m,e}\]</div>
+<div class="math notranslate nohighlight">
+\[U_e = \hat{U}_e + U_{L0,e} - U_{L0m,e}\]</div>
 <p>where the SIM decomposition is still used with <span class="math notranslate nohighlight">\(\hat{U}_e\)</span> denoting the
 time-varying components of the elements nodes’ displacements, and <span class="math notranslate nohighlight">\(U_{L0,e}\)</span> and <span class="math notranslate nohighlight">\(U_{L0m,e}\)</span> are
 derived from the parent <span class="math notranslate nohighlight">\(U_{L0}\)</span> and <span class="math notranslate nohighlight">\(U_{L0m}\)</span> arrays of displacements, respectively.</p>
@@ -1190,21 +1189,12 @@ derived from the parent <span class="math notranslate nohighlight">\(U_{L0}\)</s
 
     
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'1.0',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   
