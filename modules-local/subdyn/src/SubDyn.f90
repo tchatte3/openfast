@@ -2536,7 +2536,7 @@ CONTAINS
 
          ! local variables
       INTEGER(IntKi)             :: ErrStat3    ! The error identifier (ErrStat)
-      CHARACTER(1024)            :: ErrMsg3     ! The error message (ErrMsg)
+      CHARACTER(ErrMsgLen)       :: ErrMsg3     ! The error message (ErrMsg)
    
    
       CALL SD_DestroyContState( xdot,     ErrStat3, ErrMsg3 )
@@ -3472,7 +3472,7 @@ SUBROUTINE ReduceKMdofs(Init, p, RetDOFs, ErrStat, ErrMsg )
    INTEGER                               :: DOF_reduced
    REAL(ReKi),ALLOCATABLE                :: Kred(:,:), Mred(:,:)      ! reduced matrix
    INTEGER                               :: ErrStat2
-   CHARACTER(1024)                       :: ErrMsg2
+   CHARACTER(ErrMsgLen)                  :: ErrMsg2
    
    ErrStat = ErrID_None
    ErrMsg  = ''    

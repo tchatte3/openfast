@@ -122,7 +122,7 @@ SUBROUTINE SD_Discrt(Init,p, ErrStat, ErrMsg)
    REAL(ReKi)                    :: x1, y1, z1, x2, y2, z2, dx, dy, dz, dd, dt, d1, d2, t1, t2
    LOGICAL                       :: found, CreateNewProp
    INTEGER(IntKi)                :: ErrStat2
-   CHARACTER(1024)               :: ErrMsg2
+   CHARACTER(ErrMsgLen)          :: ErrMsg2
    
    
    ErrStat = ErrID_None
@@ -559,7 +559,7 @@ SUBROUTINE AssembleKM(Init,p, ErrStat, ErrMsg)
    REAL(ReKi), DIMENSION(2)  :: adder ! Auxiliary variable
    
    INTEGER(IntKi)           :: ErrStat2,info
-   CHARACTER(1024)          :: ErrMsg2
+   CHARACTER(ErrMsgLen)     :: ErrMsg2
 
    
       ! for current application
@@ -757,7 +757,6 @@ SUBROUTINE AssembleKM(Init,p, ErrStat, ErrMsg)
        DO J = 1, 3
           !!!r = ( NINT(Init%CMass(I, 1)) - 1 )*6 + J   !check NDIV and how this plays, and then 1st or 2nd node
           r= jn + J-1 
-          PRINT *, 'CMass I=',I, 'J,Jn=',J,'  ',jn,'  index in M  r=',r
    
           Init%M(r, r) = Init%M(r, r) + Init%CMass(I, 2)
           
@@ -780,7 +779,6 @@ SUBROUTINE AssembleKM(Init,p, ErrStat, ErrMsg)
       DO J = 4, 6
           !!!r = ( NINT(Init%CMass(I, 1)) - 1 )*6 + J
           r= jn + J-1 
-          PRINT *, 'CMass I=',I, 'J,Jn=',J,'  ',Jn,'  index in M  r=',r, 'CMASS(J-1) added=', Init%CMass(I, J-1) !debug
           
           Init%M(r, r) = Init%M(r, r) + Init%CMass(I, J-1) 
           SELECT CASE(J)
