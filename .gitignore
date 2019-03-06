@@ -40,3 +40,8 @@ vs-build/
 .vscode
 .atom
 .fortls
+
+# Word documents
+*.doc
+*.docx
+
